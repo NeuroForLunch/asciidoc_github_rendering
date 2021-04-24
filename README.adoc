@@ -1,0 +1,113 @@
+= AsciiDoc GitHub Rendering image:https://github.com/asciidoctor/asciidoctor/workflows/CI/badge.svg[Build Status (GitHub Actions),link={url-repo}/actions]
+==============================
+// Author Name <https://github.com/name[@name]>
+Author Name <author@author.email>
+:Revision: 1.0
+:toc:
+:toclevels: 1
+// settings
+ifndef::env-github[:icons: font]
+ifdef::env-github[]
+:status:
+:caution-caption: :fire:
+:important-caption: :exclamation:
+:note-caption: :paperclip:
+:tip-caption: :bulb:
+:warning-caption: :warning:
+endif::[]
+// URLs:
+:url-user: https://github.com/NeuroForLunch
+:url-repo: {url-org}/asciidoc_github_rendering
+:url-issues: {url-repo}/issues
+:url-contributors: {url-repo}/graphs/contributors
+endif::[]
+
+[[purpose]]
+.Purpose
+****
+This shows how GitHub renders AsciiDoc.
+****
+
+
+.Automatic figure numbering using image::name.png[]
+image::octocat.png[]
+
+
+.Setting the size of an image with image::name.png[name, size]
+image::octocat.png[Octocat,50] 
+
+TIP: Use single : for unnumbered title.
+
+
+Escaped: \{escaped} and +++{escaped}+++
+
+== Title with line under it
+
+== Level 1
+Text.
+
+=== Level 2
+Text.
+
+==== Level 3
+Text.
+
+===== Level 4
+Text.
+
+.. normal
+.. `monotype`
+.. `monotype`
+
+
+Horizontal rule with 3 single quotes
+
+'''
+
+Code displayed with 3 backticks
+```[html]
+<!DOCTYPE html>
+<html lang="en">
+</html>
+```
+
+=== Quotes
+
+____
+A good quote to enjoy.
+____
+
+
+
+[quote, Name, Context]
+____
+A good quote to enjoy.
+____
+
+"`The simplest quote`" 
+
+
+[verse]
+Using the [verse] attribute
+
+
+== Different style of text [[different]]
+ This text looks different by starting with a space.
+ 
+
+....
+This text looks different because of 4 periods ....
+....
+
+
+[CAUTION]
+Be cautious
+
+[IMPORTANT]
+An important thing
+
+[NOTE]
+A note
+
+[TIP]
+A tip and return to <<purpose,purpose>>.
