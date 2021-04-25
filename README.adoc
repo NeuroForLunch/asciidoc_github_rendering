@@ -4,7 +4,7 @@
 Author Name <author@author.email>
 :Revision: 1.0
 :toc:
-:toclevels: 1
+:toclevels: 2
 // settings
 ifndef::env-github[:icons: font]
 ifdef::env-github[]
@@ -24,9 +24,7 @@ endif::[]
 
 [[purpose]]
 .Purpose
-****
 This shows how GitHub renders AsciiDoc.
-****
 
 
 .Automatic figure numbering using image::name.png[]
@@ -41,7 +39,9 @@ TIP: Use single : for unnumbered title.
 
 Escaped: \{escaped} and +++{escaped}+++
 
-== Title with line under it
+= Level 0
+
+== Level 1 with line under it
 
 == Level 1
 Text.
@@ -63,13 +63,6 @@ Text.
 Horizontal rule with 3 single quotes
 
 '''
-
-Code displayed with 3 backticks
-```[html]
-<!DOCTYPE html>
-<html lang="en">
-</html>
-```
 
 === Quotes
 
@@ -98,6 +91,84 @@ Using the [verse] attribute
 ....
 This text looks different because of 4 periods ....
 ....
+
+
+.Inline markup
+* _underlines around a phrase make the text italics_
+* *astericks around a phrase make the text bold*
+* double astericks around one or more le**t**ters in a word make those letters bold
+* double underscore around a __sub__string in a word emphasizes that substring
+* use carrots^ around characters to make them ^super^script
+* use tildes~ around characters to make them ~sub~script
+ifdef::basebackend-html[* to pass through +++<b>HTML</b>+++ directly, surround the text with triple plus]
+ifdef::basebackend-docbook[* to pass through +++<constant>XML</constant>+++ directly, surround the text with triple plus]
+
+// separate two adjacent lists using a line comment (only the leading // is required)
+
+- characters can be escaped using a {backslash}
+* for instance, you can escape a quote inside emphasized text like _that\'s cool!_
+- you can safely use reserved XML characters like <, > and &, which are escaped when converting
+- force a space{sp}between inline elements using the \{sp} attribute
+- hold text together with a non-breaking{nbsp}space attribute, \{nbsp}
+
+=== Lists
+
+.Adjacent lists
+* this list
+* should join
+
+* to have
+* four items
+
+[[ordered]]
+.Ordered lists
+. These items
+. will be auto-numbered
+.. and can be nested
+. A numbered list can nest
+* unordered
+* list
+* items
+
+Escape apostrophes \' with a backslash \
+
+[[defs]]
+term::
+  definition +
+line two
+[[another_term]]another term::
+
+  another definition, which can be literal (indented) or regular paragraph
+
+
+[[nested]]
+* first level +
+written on two lines
+
+* first level
+** second level
+*** third level
+- fourth level
+* back to first level
+
+In <<ordered>> that you can change the numbering style.
+
+== Code
+
+```ruby
+class Classy
+  def this_is
+    puts "some #{colored} ruby code with ruby syntax highlighting"
+    @someobj.do_it(1, 2)
+  end
+end
+```
+
+```javascript
+var test = function this_is(){
+  console.log("some" + colored + "javascript code with javascript syntax highlighting");
+}
+```
 
 
 [CAUTION]
