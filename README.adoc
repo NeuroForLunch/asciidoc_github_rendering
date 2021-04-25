@@ -5,6 +5,7 @@ Author Name <author@author.email>
 :Revision: 1.0
 :toc:
 :toclevels: 2
+toc::[]
 // settings
 ifndef::env-github[:icons: font]
 ifdef::env-github[]
@@ -101,7 +102,6 @@ This text looks different because of 4 periods ....
 * use carrots^ around characters to make them ^super^script
 * use tildes~ around characters to make them ~sub~script
 ifdef::basebackend-html[* to pass through +++<b>HTML</b>+++ directly, surround the text with triple plus]
-ifdef::basebackend-docbook[* to pass through +++<constant>XML</constant>+++ directly, surround the text with triple plus]
 
 // separate two adjacent lists using a line comment (only the leading // is required)
 
@@ -170,9 +170,65 @@ var test = function this_is(){
 }
 ```
 
+++++
+<table>
+++++
+
+++++
+<tr><td>
+++++
+
+....
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+....
+
+++++
+</td><td>
+++++
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+++++
+</td></tr>
+++++
+
+++++
+</table>
+++++
+
+++++
+<table><tr><td>
+++++
+
+....
+++++
+<table border="1">
+<tr><td>1</td><td>2</td></tr>
+</table>
+++++
+....
+
+++++
+</td><td>
+++++
+
+++++
+<table border="1">
+<tr><td>1</td><td>2</td></tr>
+</table>
+++++
+
+++++
+</td></tr></table>
+++++
+
+
 
 [CAUTION]
 Be cautious
+
+[WARNING]
+Warning
 
 [IMPORTANT]
 An important thing
